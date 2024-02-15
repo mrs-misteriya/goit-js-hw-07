@@ -14,10 +14,9 @@ const greetUser = document.querySelector('#name-output');
 
 function inputHandler(event) {
 
-    if (event.target.value.trim() === "" || event.target.value.trim() === " ") {
-        return greetUser.textContent;
-      } else {
-        greetUser.textContent = event.target.value; }
+  if (event.target.value.trim() !== "") {
+    greetUser.textContent = event.target.value.trim();
+   }
 
 }
 

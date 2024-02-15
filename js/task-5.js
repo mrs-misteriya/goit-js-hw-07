@@ -21,7 +21,7 @@ function getRandomHexColor() {
 function onClickButton() {
 
   bodyEl.style.backgroundColor = getRandomHexColor();
-  spanEl.textContent = "- " + getRandomHexColor();
+  spanEl.textContent = "- " + bodyEl.style.backgroundColor;
 
 }
 

@@ -13,7 +13,7 @@ body {
     line-height: 1.5;
 }
 
-.controls{
+#controls{
     display: flex;
     gap: 10px;
     padding: 8px,
@@ -21,6 +21,11 @@ body {
              8px,
              16px;
     background-color: #F6F6FE;
+}
+
+#boxes{
+display: flex;
+gap: 16px;
 }
 
 .input{

@@ -37,6 +37,7 @@ const divEl = document.querySelector("#controls");
 const creatingEl = document.querySelector("button[data-create]");
 const destroingEl = document.querySelector("button[data-destroy]");
 const inputEl = divEl.firstElementChild;
+const divBoxesEl = document.querySelector("#boxes");
 
 inputEl.classList.add("input");
 creatingEl.classList.add("create");
@@ -44,38 +45,38 @@ destroingEl.classList.add("destroy");
 
 
 function onCreateButton(event) {
-  const eventValue = event.target.value;
-  if (eventValue >= 1 && eventValue <= 100) {
-    return createBoxes(eventValue);
+  if (inputEl.value >= 1 && inputEl.value<= 100) {
+    createBoxes(inputEl.value);
   } else {
-    return destroyBoxes();
+    destroyBoxes();
   };
 };
 
-
-function createBoxes(amount) {
   function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
   };
 
+function createBoxes(amount) {
+  let size = 30;
+
   for (let index = 0; index < amount; index++) {
-    let size = 30;
     const color = getRandomHexColor();
-    divEl.insertAdjacentHTML("beforeend",
+    divBoxesEl.insertAdjacentHTML("beforeend",
     `<div class = "div-element"
       style = "width: ${size}px; height: ${size}px; background-color: ${color};">
     </div>`);
-     size += 10;
+    size += 10;
+    inputEl.value = ''; 
   }
 };
 
 function destroyBoxes(){
-  inputEl.value = '';
-  
+  inputEl.value = '';  
+  divBoxesEl.innerHTML ='';
 };
 
-inputEl.addEventListener("input", onCreateButton);
+inputEl.addEventListener("input", createBoxes);
 creatingEl.addEventListener("click", onCreateButton);
 destroingEl.addEventListener("click", destroyBoxes);
