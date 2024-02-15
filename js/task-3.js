@@ -16,8 +16,9 @@ function inputHandler(event) {
 
   if (event.target.value.trim() !== "") {
     greetUser.textContent = event.target.value.trim();
+  } else {
+    greetUser.textContent = "Anonymous";
    }
-
 }
 
 userName.addEventListener('input', inputHandler);

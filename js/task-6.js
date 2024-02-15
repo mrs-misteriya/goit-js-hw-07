@@ -47,9 +47,7 @@ destroingEl.classList.add("destroy");
 function onCreateButton(event) {
   if (inputEl.value >= 1 && inputEl.value<= 100) {
     createBoxes(inputEl.value);
-  } else {
-    destroyBoxes();
-  };
+  }
 };
 
   function getRandomHexColor() {
@@ -59,6 +57,7 @@ function onCreateButton(event) {
   };
 
 function createBoxes(amount) {
+  divBoxesEl.innerHTML ='';
   let size = 30;
 
   for (let index = 0; index < amount; index++) {
@@ -69,7 +68,7 @@ function createBoxes(amount) {
     </div>`);
     size += 10;
     inputEl.value = ''; 
-  }
+  };
 };
 
 function destroyBoxes(){
