@@ -26,6 +26,8 @@ body {
 #boxes{
 display: flex;
 gap: 16px;
+border-radius: 8px;
+padding: 32px;
 }
 
 .input{
