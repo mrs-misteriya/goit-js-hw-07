@@ -66,9 +66,9 @@ function createBoxes(amount) {
     `<div class = "div-element"
       style = "width: ${size}px; height: ${size}px; background-color: ${color};">
     </div>`);
-    size += 10;
-    inputEl.value = ''; 
+    size += 10; 
   };
+  inputEl.value = '';
 };
 
 function destroyBoxes(){
@@ -76,6 +76,5 @@ function destroyBoxes(){
   divBoxesEl.innerHTML ='';
 };
 
-inputEl.addEventListener("input", createBoxes);
 creatingEl.addEventListener("click", onCreateButton);
 destroingEl.addEventListener("click", destroyBoxes);
